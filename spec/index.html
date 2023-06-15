@@ -814,37 +814,37 @@
         added to the graph identified
         by |curGraph|.
       </p>
-    </section>
 
-    <section id="triple-production">
-      <h5 style="padding-bottom:0; margin-bottom:0;">Triple Production</h5>
-      <p style="padding-top:0; margin-top:0;">
-        Each <a class="grammarRef" href="#grammar-production-object">object</a>
-        <code>N</code> in the document produces an RDF triple:
-        <span class="ntriple">|curSubject|
-        |curPredicate| <code>N</code>.</span>
-      </p>
-    </section>
+      <section id="triple-production">
+        <h5 style="padding-bottom:0; margin-bottom:0;">Triple Production</h5>
+        <p style="padding-top:0; margin-top:0;">
+          Each <a class="grammarRef" href="#grammar-production-object">object</a>
+          <code>N</code> in the document produces an RDF triple:
+          <span class="ntriple">|curSubject|
+          |curPredicate| <code>N</code>.</span>
+        </p>
+      </section>
 
-    <section id="propertyList">
-      <h5 style="padding-bottom:0; margin-bottom:0;">Property Lists</h5>
+      <section id="propertyList">
+        <h5 style="padding-bottom:0; margin-bottom:0;">Property Lists</h5>
 
-      <p style="padding-top:0; margin-top:0;">
-        Beginning the <code><a href="#grammar-production-blankNodePropertyList">blankNodePropertyList</a></code> production records the |curSubject| and |curPredicate|, and sets |curSubject| to a novel <code>blank node</code> <code>B</code>.
-        Finishing the <code><a href="#grammar-production-blankNodePropertyList">blankNodePropertyList</a></code> production restores |curSubject| and |curPredicate|.
-        The node produced by matching <code><a href="#grammar-production-blankNodePropertyList">blankNodePropertyList</a></code> is the blank node <code>B</code>.
-      </p>
-    </section>
+        <p style="padding-top:0; margin-top:0;">
+          Beginning the <code><a href="#grammar-production-blankNodePropertyList">blankNodePropertyList</a></code> production records the |curSubject| and |curPredicate|, and sets |curSubject| to a novel <code>blank node</code> <code>B</code>.
+          Finishing the <code><a href="#grammar-production-blankNodePropertyList">blankNodePropertyList</a></code> production restores |curSubject| and |curPredicate|.
+          The node produced by matching <code><a href="#grammar-production-blankNodePropertyList">blankNodePropertyList</a></code> is the blank node <code>B</code>.
+        </p>
+      </section>
 
-    <section id="collection">
-      <h5 style="padding-bottom:0; margin-bottom:0;"><span>Collections</span></h5>
-      <p style="padding-top:0; margin-top:0;">
-        Beginning the <code><a href="#grammar-production-collection">collection</a></code> production records the |curSubject| and |curPredicate|.
-      Each <code>object</code> in the <code><a href="#grammar-production-collection">collection</a></code> production has a |curSubject| set to a novel <code>blank node</code> <code>B</code> and a |curPredicate| set to <code>rdf:first</code>.
-        For each object <code>object<sub>n</sub></code> after the first produces a triple:<span class="ntriple"><code>object<sub>n-1</sub></code> <code>rdf:rest</code> <code>object<sub>n</sub></code> .</span>
-        Finishing the <code><a href="#grammar-production-collection">collection</a></code> production creates an additional triple <span class="ntriple"><code>curSubject rdf:rest rdf:nil</code> .</span> and restores |curSubject| and |curPredicate|
-        The node produced by matching <code><a href="#grammar-production-collection">collection</a></code> is the first blank node <code>B</code> for non-empty lists and <code>rdf:nil</code> for empty lists.
-      </p>
+      <section id="collection">
+        <h5 style="padding-bottom:0; margin-bottom:0;"><span>Collections</span></h5>
+        <p style="padding-top:0; margin-top:0;">
+          Beginning the <code><a href="#grammar-production-collection">collection</a></code> production records the |curSubject| and |curPredicate|.
+          Each <code>object</code> in the <code><a href="#grammar-production-collection">collection</a></code> production has a |curSubject| set to a novel <code>blank node</code> <code>B</code> and a |curPredicate| set to <code>rdf:first</code>.
+          For each object <code>object<sub>n</sub></code> after the first produces a triple:<span class="ntriple"><code>object<sub>n-1</sub></code> <code>rdf:rest</code> <code>object<sub>n</sub></code> .</span>
+          Finishing the <code><a href="#grammar-production-collection">collection</a></code> production creates an additional triple <span class="ntriple"><code>curSubject rdf:rest rdf:nil</code> .</span> and restores |curSubject| and |curPredicate|
+          The node produced by matching <code><a href="#grammar-production-collection">collection</a></code> is the first blank node <code>B</code> for non-empty lists and <code>rdf:nil</code> for empty lists.
+        </p>  
+      </section>
     </section>
   </section>
 </section>
